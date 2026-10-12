@@ -1,0 +1,13 @@
+{
+  "name": "ip-isp-discord-webhook",
+  "version": "1.0.0",
+  "description": "Node.js server to get IP and ISP information",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "fetch": "0.9.5"
+  }
+}
