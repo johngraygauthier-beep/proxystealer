@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address Logger</title>
+    <script src="https://api.ipify.org?format=json&callback=getIp"></script>
+    <script>
+        function getIp(ip) {
+            const ipValue = ip.ip;
+            fetch('https://your-server-url.com/log', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ ip: ipValue })
+            }).then(response => response.json())
+              .then(data => {
+                  alert('Your IP address has been logged!');
+              });
+        }
+    </script>
+</head>
+<body>
+    <h1>IP Address Logger</h1>
+    <p>Your IP address will be sent to my server.</p>
+</body>
+</html>
